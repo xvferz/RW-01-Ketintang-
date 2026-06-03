@@ -565,33 +565,47 @@
     document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
     // ─── Rekap data ───
-    const rekapData = [
-        { bulan: 'Maret 2026', tipe: 'in',  jenis: 'Surat Permohonan SKTM',              jumlah: 12 },
-        { bulan: 'Maret 2026', tipe: 'in',  jenis: 'Surat Permohonan Domisili',         jumlah: 8  },
-        { bulan: 'Maret 2026', tipe: 'in',  jenis: 'Surat Permohonan Nikah',            jumlah: 5  },
-        { bulan: 'Maret 2026', tipe: 'out', jenis: 'SKTM',                              jumlah: 14 },
-        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Keterangan Domisili',         jumlah: 10 },
-        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Pengantar Nikah',             jumlah: 6  },
-        { bulan: 'Maret 2026', tipe: 'service', jenis: 'Pembuatan SKTM',                jumlah: 18 },
-        { bulan: 'Maret 2026', tipe: 'service', jenis: 'Pembuatan Surat Domisili',      jumlah: 12 },
-        { bulan: 'April 2026', tipe: 'in',  jenis: 'Surat Permohonan SKTM',              jumlah: 15 },
-        { bulan: 'April 2026', tipe: 'in',  jenis: 'Surat Permohonan Domisili',         jumlah: 10 },
-        { bulan: 'April 2026', tipe: 'in',  jenis: 'Surat Permohonan Nikah',            jumlah: 7  },
-        { bulan: 'April 2026', tipe: 'out', jenis: 'SKTM',                              jumlah: 16 },
-        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Keterangan Domisili',         jumlah: 12 },
-        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Pengantar Nikah',             jumlah: 8  },
-        { bulan: 'April 2026', tipe: 'service', jenis: 'Pembuatan SKTM',                jumlah: 22 },
-        { bulan: 'April 2026', tipe: 'service', jenis: 'Pembuatan Surat Domisili',      jumlah: 15 },
-        { bulan: 'Mei 2026',   tipe: 'in',  jenis: 'Surat Permohonan SKTM',              jumlah: 18 },
-        { bulan: 'Mei 2026',   tipe: 'in',  jenis: 'Surat Permohonan Domisili',         jumlah: 14 },
-        { bulan: 'Mei 2026',   tipe: 'in',  jenis: 'Surat Permohonan Nikah',            jumlah: 9  },
-        { bulan: 'Mei 2026',   tipe: 'out', jenis: 'SKTM',                              jumlah: 20 },
-        { bulan: 'Mei 2026',   tipe: 'out', jenis: 'Surat Keterangan Domisili',         jumlah: 16 },
-        { bulan: 'Mei 2026',   tipe: 'out', jenis: 'Surat Pengantar Nikah',             jumlah: 11 },
-        { bulan: 'Mei 2026',   tipe: 'service', jenis: 'Pembuatan SKTM',                jumlah: 26 },
-        { bulan: 'Mei 2026',   tipe: 'service', jenis: 'Pembuatan Surat Domisili',      jumlah: 18 },
-    ];
+   const rekapData = [
+        // --- DATA MARET 2026 ---
+        { bulan: 'Maret 2026', tipe: 'in', jenis: 'Surat Pemberitahuan', jumlah: 1 },
+        { bulan: 'Maret 2026', tipe: 'in', jenis: 'Surat Rekomendasi', jumlah: 1 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Keterangan Domisili', jumlah: 2 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Keterangan Tidak Mampu', jumlah: 1 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Keterangan Usaha', jumlah: 1 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Pengantar KK', jumlah: 1 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Pengantar KTP', jumlah: 1 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Pengantar Nikah', jumlah: 2 },
+        { bulan: 'Maret 2026', tipe: 'out', jenis: 'Surat Pengantar SKCK', jumlah: 2 },
+        { bulan: 'Maret 2026', tipe: 'service', jenis: 'Pelayanan Surat Keterangan Domisili', jumlah: 2 },
+        { bulan: 'Maret 2026', tipe: 'service', jenis: 'Pelayanan Surat Pengantar Nikah', jumlah: 2 },
+        { bulan: 'Maret 2026', tipe: 'service', jenis: 'Pelayanan Surat Pengantar SKCK', jumlah: 2 },
 
+        // --- DATA APRIL 2026 ---
+        { bulan: 'April 2026', tipe: 'in', jenis: 'Surat Konfirmasi', jumlah: 1 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Keterangan Domisili', jumlah: 1 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Keterangan Tidak Mampu', jumlah: 1 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Keterangan Usaha', jumlah: 2 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Pengantar KK', jumlah: 2 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Pengantar KTP', jumlah: 2 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Pengantar Nikah', jumlah: 1 },
+        { bulan: 'April 2026', tipe: 'out', jenis: 'Surat Pengantar SKCK', jumlah: 1 },
+        { bulan: 'April 2026', tipe: 'service', jenis: 'Pelayanan Surat Keterangan Usaha', jumlah: 2 },
+        { bulan: 'April 2026', tipe: 'service', jenis: 'Pelayanan Surat Pengantar KK', jumlah: 2 },
+        { bulan: 'April 2026', tipe: 'service', jenis: 'Pelayanan Surat Pengantar KTP', jumlah: 2 },
+
+        // --- DATA MEI 2026 ---
+        { bulan: 'Mei 2026', tipe: 'in', jenis: 'Surat Edaran', jumlah: 1 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Keterangan Domisili', jumlah: 1 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Keterangan Tidak Mampu', jumlah: 2 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Keterangan Usaha', jumlah: 1 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Pengantar KK', jumlah: 1 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Pengantar KTP', jumlah: 1 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Pengantar Nikah', jumlah: 2 },
+        { bulan: 'Mei 2026', tipe: 'out', jenis: 'Surat Pengantar SKCK', jumlah: 2 },
+        { bulan: 'Mei 2026', tipe: 'service', jenis: 'Pelayanan Surat Keterangan Tidak Mampu', jumlah: 2 },
+        { bulan: 'Mei 2026', tipe: 'service', jenis: 'Pelayanan Surat Pengantar Nikah', jumlah: 2 },
+        { bulan: 'Mei 2026', tipe: 'service', jenis: 'Pelayanan Surat Pengantar SKCK', jumlah: 2 },
+    ];
     const badgeMap = { in: '<span class="rekap-badge in"><i class="fas fa-arrow-down"></i> Masuk</span>', out: '<span class="rekap-badge out"><i class="fas fa-arrow-up"></i> Keluar</span>', service: '<span class="rekap-badge service"><i class="fas fa-star"></i> Layanan</span>' };
 
     function renderRekap(filter = 'all') {

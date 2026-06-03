@@ -44,12 +44,19 @@
         .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: #0d47a1; cursor: pointer; }
 
         /* ─── HERO ─── */
+        /* ─── HERO ─── */
         .hero {
             margin-top: 68px;
             min-height: 90vh;
             display: flex; align-items: center; justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 40%, #1e88e5 70%, #42a5f5 100%);
+            
+            /* Background diganti menggunakan gambar banner */
+            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(66, 165, 245, 0.7)), url('banner-rw.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Opsional: memberi efek scroll yang mulus */
+            
             position: relative; overflow: hidden;
             padding: 2rem;
         }

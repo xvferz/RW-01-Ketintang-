@@ -253,6 +253,28 @@
         /* ─── ANIMATIONS ─── */
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
+        /* ─── MODAL PREVIEW ─── */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+            align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .modal.show { display: flex; opacity: 1; }
+        .modal-content {
+            background-color: #fff; padding: 2rem; border-radius: 16px;
+            width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto;
+            position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transform: translateY(-30px); transition: transform 0.3s ease;
+        }
+        .modal.show .modal-content { transform: translateY(0); }
+        .close-modal {
+            position: absolute; top: 15px; right: 20px; font-size: 1.8rem; font-weight: bold;
+            color: #999; cursor: pointer; transition: color 0.3s;
+        }
+        .close-modal:hover { color: #d32f2f; }
+        .modal-title { margin-bottom: 1rem; color: #0d47a1; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;}
+        .preview-img { width: 100%; border-radius: 8px; border: 1px solid #e0e0e0; }
     </style>
 </head>
 <body>
@@ -515,31 +537,49 @@
         <p class="section-sub">Unduh template surat administratif untuk berbagai keperluan warga RW 01.</p>
 
         <div class="download-grid">
+            <!-- Kartu 1 -->
             <div class="download-card fade-up">
                 <div class="download-icon" style="background:#e3f0ff;color:#0d47a1;"><i class="fas fa-file-signature"></i></div>
                 <h4>Surat Pengantar RT/RW</h4>
-                <p>Untuk pengantar pembuatan KTP, KK, dan administrasi kependudukan lainnya.</p>
-                <a href="Surat-Pengantar-RT-RW.docx" class="download-btn" download><i class="fas fa-download"></i> Download DOCX</a>
+                <p>Untuk pengantar pembuatan KTP, KK, dan administrasi lainnya.</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="download-btn btn-preview" data-img="preview-pengantar.jpg" data-title="Surat Pengantar RT/RW" style="background: #fff; border: 1px solid #0d47a1; color: #0d47a1; cursor: pointer;"><i class="fas fa-eye"></i> Preview</button>
+                    <a href="surat-pengantar-rt-rw.docx" class="download-btn" download><i class="fas fa-download"></i> Unduh</a>
+                </div>
             </div>
+            
+            <!-- Kartu 2 -->
             <div class="download-card fade-up">
                 <div class="download-icon" style="background:#e8f5e9;color:#2e7d32;"><i class="fas fa-home"></i></div>
                 <h4>Surat Keterangan Domisili</h4>
-                <p>Untuk melaporkan dan mengesahkan tempat tinggal warga di wilayah RW 05.</p>
-                <a href="Surat-Keterangan-Domisili.docx" class="download-btn" download><i class="fas fa-download"></i> Download DOCX</a>
+                <p>Untuk melaporkan dan mengesahkan tempat tinggal warga.</p>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="download-btn btn-preview" data-img="preview-domisili.jpg" data-title="Surat Keterangan Domisili" style="background: #fff; border: 1px solid #0d47a1; color: #0d47a1; cursor: pointer;"><i class="fas fa-eye"></i> Preview</button>
+                    <a href="surat-keterangan-domisili.docx" class="download-btn" download><i class="fas fa-download"></i> Unduh</a>
+                </div>
             </div>
+
+            
             <div class="download-card fade-up">
-                <div class="download-icon" style="background:#fff3e0;color:#e65100;"><i class="fas fa-file-invoice"></i></div>
-                <h4>SKTM (Surat Keterangan Tidak Mampu)</h4>
+                <div class="download-icon" style="background:#e8f5e9;color:#2e7d32;"><i class="fas fa-home"></i></div>
+                <h4>Surat Keterangan Tidak Mampu</h4>
                 <p>Untuk keperluan beasiswa, bantuan sosial, dan keringanan biaya kesehatan.</p>
-                <a href="Surat-Keterangan-Tidak-Mampu.docx" class="download-btn" download><i class="fas fa-download"></i> Download DOCX</a>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="download-btn btn-preview" data-img="preview-domisili.jpg" data-title="Surat Keterangan Domisili" style="background: #fff; border: 1px solid #0d47a1; color: #0d47a1; cursor: pointer;"><i class="fas fa-eye"></i> Preview</button>
+                    <a href="surat-keterangan-domisili.docx" class="download-btn" download><i class="fas fa-download"></i> Unduh</a>
+                </div>
             </div>
-            <div class="download-card fade-up">
-                <div class="download-icon" style="background:#f3e5f5;color:#6a1b9a;"><i class="fas fa-ring"></i></div>
-                <h4>Surat Pengantar Nikah</h4>
+
+             <div class="download-card fade-up">
+                <div class="download-icon" style="background:#e8f5e9;color:#2e7d32;"><i class="fas fa-home"></i></div>
+                <h4>Surat Pengantar Permohonan Nikah</h4>
                 <p>Untuk pengajuan permohonan pernikahan di KUA Kecamatan Bubutan.</p>
-                <a href="Surat-Pengantar-Permohonan-Nikah.docx" class="download-btn" download><i class="fas fa-download"></i> Download DOCX</a>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="download-btn btn-preview" data-img="preview-domisili.jpg" data-title="Surat Keterangan Domisili" style="background: #fff; border: 1px solid #0d47a1; color: #0d47a1; cursor: pointer;"><i class="fas fa-eye"></i> Preview</button>
+                    <a href="surat-keterangan-domisili.docx" class="download-btn" download><i class="fas fa-download"></i> Unduh</a>
+                </div>
             </div>
-        </div>
+            <!-- Tambahkan perlakuan yang sama untuk Kartu SKTM dan Pengantar Nikah di sini -->
     </div>
 </section>
 
@@ -572,6 +612,14 @@
         </div>
     </div>
 </section>
+    <!-- ═══ MODAL PREVIEW SURAT ═══ -->
+<div id="previewModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 class="modal-title" id="modalTitle"><i class="fas fa-file-alt"></i> Preview Surat</h3>
+        <img id="previewImage" src="" alt="Preview Surat" class="preview-img">
+    </div>
+</div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
@@ -681,6 +729,26 @@
     }, { threshold: .1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    // ─── Modal Preview Surat ───
+    const modal = document.getElementById('previewModal');
+    const modalImg = document.getElementById('previewImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Buka Modal saat tombol preview diklik
+    document.querySelectorAll('.btn-preview').forEach(btn => {
+        btn.addEventListener('click', function() {
+            modalImg.src = this.dataset.img; // Ambil gambar dari data-img
+            modalTitle.innerHTML = `<i class="fas fa-file-alt"></i> Preview: ${this.dataset.title}`;
+            modal.classList.add('show');
+        });
+    });
+
+    // Tutup Modal
+    closeModal.addEventListener('click', () => modal.classList.remove('show'));
+    window.addEventListener('click', e => { 
+        if (e.target === modal) modal.classList.remove('show'); 
+    });
 </script>
 </body>
 </html>
